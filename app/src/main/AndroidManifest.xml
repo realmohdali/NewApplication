@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".Login" />
         <activity android:name=".Signup" />
-        <activity android:name=".Upload"></activity>
+        <activity android:name=".Upload" />
+        <activity android:name=".ImageViewer"></activity>
     </application>
 
 </manifest>

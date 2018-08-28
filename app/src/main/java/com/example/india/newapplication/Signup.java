@@ -30,6 +30,7 @@ public class Signup extends AppCompatActivity {
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
         overridePendingTransition(0, 0);
+        finish();
     }
 
     public void signup(View view) {

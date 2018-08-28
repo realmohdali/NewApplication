@@ -3,6 +3,7 @@ package com.example.india.newapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -25,9 +26,10 @@ public class MainActivity extends AppCompatActivity {
         int array[] = {R.drawable.chrysanthemum, R.drawable.desert, R.drawable.hydrangeas, R.drawable.jellyfish, R.drawable.koala, R.drawable.lighthouse, R.drawable.penguins, R.drawable.tulips};
 
         RecyclerView recyclerView = findViewById(R.id.feed);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-        RecyclerView.Adapter adapter = new myAdapter(array);
+        //LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 3);
+        recyclerView.setLayoutManager(gridLayoutManager);
+        RecyclerView.Adapter adapter = new myAdapter(array, this);
         recyclerView.setAdapter(adapter);
     }
 
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(this, Login.class);
                 startActivity(intent1);
                 overridePendingTransition(0, 0);
+                finish();
                 break;
         }
         return super.onOptionsItemSelected(item);

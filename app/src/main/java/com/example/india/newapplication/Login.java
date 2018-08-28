@@ -35,5 +35,6 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(this, Signup.class);
         startActivity(intent);
         overridePendingTransition(0, 0);
+        finish();
     }
 }
